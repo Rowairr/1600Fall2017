@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crab : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class Crab : Animal {
+public override void Start(){
+	base.Start();
+	Pinch();
+}
+void Pinch (){
+	print(this.name + " Pinch");
+}
 }

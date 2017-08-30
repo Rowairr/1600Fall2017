@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mammal : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class Mammal : Animal {
+public override void Start(){
+	base.Start();
+	Shivers();
+}
+void Shivers (){
+	print(this.name + " Shivers");
+}
 }
