@@ -1,5 +1,11 @@
 Flop Games
 
+<<<<<<< HEAD
 Assassin's Creed Chronicles
 Mario Party 10
 Resident Evil 6
+=======
+Call of Duty
+Battlefield
+Ghost Recon
+>>>>>>> Japan's_Take

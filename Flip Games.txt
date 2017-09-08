@@ -1,5 +1,11 @@
 Flip Games
 
+<<<<<<< HEAD
 Call of Duty
 Battlefield
 Ghost Recon
+=======
+Assassin's Creed Chronicles
+Mario Party 10
+Resident Evil 6
+>>>>>>> Japan's_Take
