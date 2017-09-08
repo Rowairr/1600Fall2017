@@ -10,12 +10,15 @@ public class Animal : MonoBehaviour {
 		Eat();
 		Sleep();
 	}
+	// This makes the word "Die" appear on screen
 	void Die () {
 		print(this.name + " Dies");
 	}
+	//This makes the word "Eats" appear on screen
 	void Eat () {
 		print(this.name + " Eats");
 	}
+	// This makes the word "Sleep" appear on screen
 	void Sleep () {
 		print(this.name + " Sleeps");
 	}
