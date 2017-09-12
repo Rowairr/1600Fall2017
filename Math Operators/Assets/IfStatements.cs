@@ -5,7 +5,11 @@ using UnityEngine;
 public class IfStatements : MonoBehaviour {
 //If statements are used to plug in functions under certain circumstances.
 	void Start () {
-		int x = 7;
+	
+	}
+	void Update(){	
+		var x = 7;
+		var DecreasingNumber = .5;
 		if (x==7)
 		{
 			print("We've got us a lucky 7");
@@ -17,6 +21,38 @@ public class IfStatements : MonoBehaviour {
 		if(x<7)
 		{
 			print("That's too low");
+		}
+		if(x<=0)
+		{
+			print("Well, that's that. No more luck.");
+		}
+		if(x==6)
+		{
+			print("Wait... What's going on?");
+		}
+		if(x==5)
+		{
+			print("Hey! Stop that!");
+		}
+		if(x==4)
+		{
+			print("No! Seven come back!");
+		}
+		if(x==3)
+		{
+			print("S.O.S!");
+		}
+		if(x==2)
+		{
+			print("Call the police!!! Call the fire department!");
+		}
+		if(x==1)
+		{
+			print("Call my mom...");
+		}
+		function Update()
+		{
+			x -= Time.deltaTime / DecreasingNumber;
 		}
 	}
 }
