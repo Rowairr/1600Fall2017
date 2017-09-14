@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class IfStatements : MonoBehaviour {
-//If statements are used to plug in functions under certain circumstances.
-	void Start () {
-	
-	}
-	void Update(){	
-		var x = 7;
-		var DecreasingNumber = .5;
+//If statements are used to plug in functions under certain circumstances.	
+		public double x = 9.0;
+		public float decreasingNumber = .1f;
+		void Update()
+		{
+			x -= Time.deltaTime / decreasingNumber;
 		if (x==7)
 		{
 			print("We've got us a lucky 7");
@@ -26,33 +25,30 @@ public class IfStatements : MonoBehaviour {
 		{
 			print("Well, that's that. No more luck.");
 		}
-		if(x==6)
+		if(x<=6)
 		{
 			print("Wait... What's going on?");
 		}
-		if(x==5)
+		if(x<=5)
 		{
 			print("Hey! Stop that!");
 		}
-		if(x==4)
+		if(x<=4)
 		{
 			print("No! Seven come back!");
 		}
-		if(x==3)
+		if(x<=3)
 		{
 			print("S.O.S!");
 		}
-		if(x==2)
+		if(x<=2)
 		{
 			print("Call the police!!! Call the fire department!");
 		}
-		if(x==1)
+		if(x<=1)
 		{
 			print("Call my mom...");
 		}
-		function Update()
-		{
-			x -= Time.deltaTime / DecreasingNumber;
-		}
 	}
 }
+
