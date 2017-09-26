@@ -36,7 +36,7 @@ public double Num2 = 4;
 		}
 		while (Num2 == 4)
 		{
-			print("Num2 is currently 4")
+			print("Num2 is currently 4");
 		}
 		while (Num2 <= 4)
 		{
