@@ -3,14 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PawnPowerup : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void OnTriggerEnter()
+    {
+        gameObject.SetActive(false);
+    }
 }
