@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour {
 
+	public string[] foxFood = {"Bananas", "Apples", "Grapes", "Chicken", "Turkey", "Cake"};
+	public int[] foodCount = {3, 45, 3, 1, 1, 1};
 	// Use this for initialization
 	public virtual void Start () {
 		Die();
-		Eat();
+
+		for(int i = 0; i < foxFood.Length; i++)
+		{
+			Eat(foxFood[i], foodCount[i]);
+		}
 		Sleep();
 	}
 	// This makes the word "Die" appear on screen
@@ -15,8 +21,9 @@ public class Animal : MonoBehaviour {
 		print(this.name + " Dies");
 	}
 	//This makes the word "Eats" appear on screen
-	void Eat () {
-		print(this.name + " Eats");
+	void Eat (string food, int amount) {
+		print(this.name + "likes to eat" + food);
+		print(this.name + "ate" + amount);
 	}
 	// This makes the word "Sleep" appear on screen
 	void Sleep () {
