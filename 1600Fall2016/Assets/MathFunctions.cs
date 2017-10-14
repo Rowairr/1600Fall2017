@@ -35,7 +35,8 @@ public int JustOkay;
 	}
 	int ReturnNum(int _num, int _num2) {
 		return _num + _num2;
-	}
+	}/*Returns, such as the one above, return data after the function
+	is completed and if the function is still true*/
 	string ReturnPassword (string _login){
 		if(_login == "ou812"){
 		return "Password Correct";
