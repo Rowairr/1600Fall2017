@@ -15,8 +15,8 @@ public float jumpForce = 200;
 	void FixedUpdate () {
 		moveVector3.y -= gravity * Time.deltaTime;
 		if(charactercontroller.isGrounded){
-			if(Input.GetKey(KeyCode.Space)){
-			moveVector3.y += jumpForce * Time.deltaTime;
+			if(Input.GetKeyDown(KeyCode.Space)){
+			moveVector3.y = jumpForce * Time.deltaTime;
 			}
 		}
 		moveVector3.z = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
