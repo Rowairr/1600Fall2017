@@ -87,5 +87,6 @@ public PowerUpType powerUp;
 		endGameText.text = _text;
 		GameOverUI.SetActive(true);
 		CharacterControl.gameOver = true;
+		NavMeshAI.gameOver = true;
 	}
 }

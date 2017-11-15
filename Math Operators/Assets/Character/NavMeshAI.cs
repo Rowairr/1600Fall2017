@@ -6,7 +6,10 @@ using UnityEngine.AI;
 public class NavMeshAI : MonoBehaviour {
 public Transform player;
 public NavMeshAgent agent;
+public static bool gameOver = false;
 	void Update () {
-		agent.destination = player.position;
+		if (!gameOver){
+			agent.destination = player.position;
+		}
 	}
 }
