@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour {
 
+public static bool gameOver = false;
+
+	
 	void OnTriggerEnter(){
-		ReplayGame.startPosition = transform.position;
+		if(!gameOver){
+			ReplayGame.startPosition = transform.position;
 	}
+}
 }

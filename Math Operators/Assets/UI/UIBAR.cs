@@ -14,7 +14,7 @@ public int coinValue = 10;
 public GameObject GameOverUI;
 public float powerLevel = 0.1f;
 public float incrementAmount = 0.01f;
-
+public static bool PowerUpsOff = false;
 
 public enum PowerUpType
 {
@@ -25,7 +25,7 @@ public enum PowerUpType
 }
 public PowerUpType powerUp;
 	void OnTriggerEnter () {
-
+		if(!PowerUpsOff){
 		switch (powerUp)
 		{
 			case PowerUpType.PowerUp:
@@ -44,6 +44,7 @@ public PowerUpType powerUp;
 			break;
 		}
 		
+	}
 	}
 	IEnumerator CollectCoin(){
 		print("Coin Collected");
@@ -88,5 +89,7 @@ public PowerUpType powerUp;
 		GameOverUI.SetActive(true);
 		CharacterControl.gameOver = true;
 		NavMeshAI.gameOver = true;
+		CheckPoint.gameOver = true;
+		PowerUpsOff = true;
 	}
 }
