@@ -9,7 +9,12 @@ public float gravity = 9.81f;
 public float speed = 12;
 public Vector3 moveVector3;
 public float jumpForce = 200;
+public Transform target;
 	
+	void Start()
+	{
+		target = GetComponent<Transform>();
+	}
 	void FixedUpdate () {
 		moveVector3.y -= gravity * Time.deltaTime;
 		if(charactercontroller.isGrounded && !gameOver){
@@ -19,5 +24,8 @@ public float jumpForce = 200;
 			moveVector3.z = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		}
 		charactercontroller.Move(moveVector3);
+		while(Input.GetKeyDown(KeyCode.LeftArrow)){
+			target.Quaternion.y=180;
+		}
 	}
 }
