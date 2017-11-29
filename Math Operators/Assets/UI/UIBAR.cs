@@ -81,7 +81,7 @@ public PowerUpType powerUp;
 		}
 		
 		if (bar.fillAmount == 0){
-			EndGame("Game Over");
+			EndGame("GAME OVER");
 		}
 	}
 	void EndGame (string _text){
