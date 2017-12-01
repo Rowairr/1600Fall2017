@@ -21,7 +21,8 @@ public enum PowerUpType
 	PowerUp,
 	PowerDown,
 	CollectCoin,
-	Win
+	Win,
+	Umbrella
 }
 public PowerUpType powerUp;
 	void OnTriggerEnter () {
@@ -41,6 +42,9 @@ public PowerUpType powerUp;
 			break;
 			case PowerUpType.Win:
 				EndGame("You Win!");
+			break;
+			case PowerUpType.Umbrella:
+				StartCoroutine(Umbrella);
 			break;
 		}
 		
@@ -83,6 +87,9 @@ public PowerUpType powerUp;
 		if (bar.fillAmount == 0){
 			EndGame("GAME OVER");
 		}
+	}
+	IEnumerator Umbrella(){
+		
 	}
 	void EndGame (string _text){
 		endGameText.text = _text;
