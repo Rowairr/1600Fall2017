@@ -53,7 +53,9 @@ public PowerUpType powerUp;
 				Umbrella();
 			break;
 		}
-		gameObject.SetActive(false);
+		if(!powerUp.PowerDown){
+			gameObject.SetActive(false);
+		}
 	}
 	}
 	IEnumerator CollectCoin(){
