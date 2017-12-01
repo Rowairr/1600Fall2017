@@ -15,6 +15,7 @@ public GameObject GameOverUI;
 public float powerLevel = 0.1f;
 public float incrementAmount = 0.01f;
 public static bool PowerUpsOff = false;
+public GameObject cover;
 
 public enum PowerUpType
 {
@@ -47,7 +48,7 @@ public PowerUpType powerUp;
 				StartCoroutine(Umbrella);
 			break;
 		}
-		
+		gameObject.SetActive(false);
 	}
 	}
 	IEnumerator CollectCoin(){
@@ -89,7 +90,10 @@ public PowerUpType powerUp;
 		}
 	}
 	IEnumerator Umbrella(){
-		
+		if(bar.fillAmount >= 100)
+		{
+			static bool cover = true;
+		}
 	}
 	void EndGame (string _text){
 		endGameText.text = _text;
