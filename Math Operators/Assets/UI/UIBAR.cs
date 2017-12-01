@@ -44,7 +44,6 @@ public PowerUpType powerUp;
 			break;
 			case PowerUpType.CollectCoin:
 				StartCoroutine(CollectCoin());
-			//start the coroutine "CollectCoin"
 			break;
 			case PowerUpType.Win:
 				EndGame("You Win!");
@@ -52,9 +51,6 @@ public PowerUpType powerUp;
 			case PowerUpType.Umbrella:
 				Umbrella();
 			break;
-		}
-		if(!powerUp.PowerDown){
-			gameObject.SetActive(false);
 		}
 	}
 	}
@@ -67,6 +63,7 @@ public PowerUpType powerUp;
 			coinNum.text = (totalCoinValue++).ToString();
 			yield return new WaitForFixedUpdate();
 		}
+		gameObject.SetActive(false);
 	}
 
 	IEnumerator PowerUpBar () {
@@ -79,6 +76,7 @@ public PowerUpType powerUp;
 			bar.fillAmount += incrementAmount;
 			yield return new WaitForSeconds(incrementAmount);
 		}
+		gameObject.SetActive(false);
 		}
 	IEnumerator PowerDownBar () {
 		float tempAmount = bar.fillAmount - powerLevel;
@@ -91,6 +89,7 @@ public PowerUpType powerUp;
 			
 			yield return new WaitForSeconds(incrementAmount);
 		}
+		gameObject.SetActive(false);
 		
 		if (bar.fillAmount == 0){
 			EndGame("GAME OVER");
@@ -104,7 +103,8 @@ public PowerUpType powerUp;
 		else
 		{
 			StartCoroutine(PowerUpBar());
-		}	
+		}
+		gameObject.SetActive(false);	
 	}
 	void EndGame (string _text){
 		endGameText.text = _text;
