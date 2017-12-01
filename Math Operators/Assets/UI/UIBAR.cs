@@ -89,7 +89,6 @@ public PowerUpType powerUp;
 			
 			yield return new WaitForSeconds(incrementAmount);
 		}
-		gameObject.SetActive(false);
 		
 		if (bar.fillAmount == 0){
 			EndGame("GAME OVER");
