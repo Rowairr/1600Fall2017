@@ -26,6 +26,11 @@ public enum PowerUpType
 	Umbrella
 }
 public PowerUpType powerUp;
+
+	void Start()
+	{
+		cover.gameObject.SetActive(false);
+	}
 	void OnTriggerEnter () {
 		if(!PowerUpsOff){
 		switch (powerUp)
@@ -89,11 +94,15 @@ public PowerUpType powerUp;
 			EndGame("GAME OVER");
 		}
 	}
-	IEnumerator Umbrella(){
+	IEnumerator Umbrella () {
 		if(bar.fillAmount >= 100)
 		{
-			static bool cover = true;
+			cover.gameObject.SetActive(true);
 		}
+		else
+		{
+			StartCoroutine(PowerUpBar());
+		}	
 	}
 	void EndGame (string _text){
 		endGameText.text = _text;
