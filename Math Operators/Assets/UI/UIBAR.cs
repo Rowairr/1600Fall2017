@@ -49,7 +49,7 @@ public PowerUpType powerUp;
 				EndGame("You Win!");
 			break;
 			case PowerUpType.Umbrella:
-				Umbrella();
+				StartCoroutine(Umbrella());
 			break;
 		}
 	}
@@ -94,7 +94,7 @@ public PowerUpType powerUp;
 			EndGame("GAME OVER");
 		}
 	}
-	void Umbrella () {
+	IEnumerator Umbrella () {
 		
 		if(bar.fillAmount == 1)
 		{
@@ -106,14 +106,14 @@ public PowerUpType powerUp;
 		}
 		for(int x = 1; x >= 1; x ++)
 		{
-			if (x >= 10){
+			if (x >= 100){
 				cover.SetActive(false);
 				x = 10;
 			}
-			if (x==10){
+			if (x==100){
 				x = 1;
 			}
-
+			yield return new WaitForSeconds(Time.deltaTime);
 		}
 		gameObject.SetActive(false);	
 	}
