@@ -95,6 +95,7 @@ public PowerUpType powerUp;
 		}
 	}
 	void Umbrella () {
+		
 		if(bar.fillAmount == 1)
 		{
 			cover.SetActive(true);
@@ -102,6 +103,17 @@ public PowerUpType powerUp;
 		else
 		{
 			StartCoroutine(PowerUpBar());
+		}
+		for(int x = 1; x >= 1; x + tempamount)
+		{
+			if (x >= 10){
+				cover.SetActive(false);
+				x = 10;
+			}
+			if (x==10){
+				x = 1;
+			}
+
 		}
 		gameObject.SetActive(false);	
 	}
