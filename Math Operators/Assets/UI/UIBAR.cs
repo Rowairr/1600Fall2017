@@ -83,7 +83,6 @@ public PowerUpType powerUp;
 		}
 	IEnumerator PowerDownBar () {
 		float tempAmount = bar.fillAmount - powerLevel;
-		meshrenderer.enabled = false;
 		if(tempAmount < 0){
 			tempAmount = 0;
 		}
@@ -117,7 +116,7 @@ public PowerUpType powerUp;
 			if (x==100){
 				x = 1;
 			}
-			yield return new WaitForSeconds(Time.deltaTime);
+			yield return new WaitForSeconds(0.1f);
 		}	
 		gameObject.SetActive(false);
 	}
