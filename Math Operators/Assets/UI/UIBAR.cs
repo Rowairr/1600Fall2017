@@ -104,7 +104,7 @@ public PowerUpType powerUp;
 		{
 			StartCoroutine(PowerUpBar());
 		}
-		for(int x = 1; x >= 1; x + tempamount)
+		for(int x = 1; x >= 1; x ++)
 		{
 			if (x >= 10){
 				cover.SetActive(false);
