@@ -16,6 +16,7 @@ public float powerLevel = 0.1f;
 public float incrementAmount = 0.01f;
 public static bool PowerUpsOff = false;
 public GameObject cover;
+public MeshRenderer meshrenderer;
 
 public enum PowerUpType
 {
@@ -30,6 +31,7 @@ public PowerUpType powerUp;
 	void Start()
 	{
 		cover.gameObject.SetActive(false);
+		GetComponent<MeshRenderer>();
 	}
 	void OnTriggerEnter () {
 		if(!PowerUpsOff){
@@ -55,7 +57,7 @@ public PowerUpType powerUp;
 	}
 	}
 	IEnumerator CollectCoin(){
-		print("Coin Collected");
+		meshrenderer.enabled = false;
 		totalCoinValue = int.Parse(coinNum.text);
 		//coinNum.text = (totalCoinValue + coinValue).ToString();
 		int tempAmount = totalCoinValue + coinValue;
@@ -68,6 +70,7 @@ public PowerUpType powerUp;
 
 	IEnumerator PowerUpBar () {
 		float tempAmount = bar.fillAmount + powerLevel;
+		meshrenderer.enabled = false;
 		if (tempAmount > 1){
 			tempAmount = 1;
 		}
@@ -80,6 +83,7 @@ public PowerUpType powerUp;
 		}
 	IEnumerator PowerDownBar () {
 		float tempAmount = bar.fillAmount - powerLevel;
+		meshrenderer.enabled = false;
 		if(tempAmount < 0){
 			tempAmount = 0;
 		}
@@ -95,7 +99,7 @@ public PowerUpType powerUp;
 		}
 	}
 	IEnumerator Umbrella () {
-		
+		meshrenderer.enabled = false;
 		if(bar.fillAmount == 1)
 		{
 			cover.SetActive(true);
@@ -114,8 +118,8 @@ public PowerUpType powerUp;
 				x = 1;
 			}
 			yield return new WaitForSeconds(Time.deltaTime);
-		}
-		gameObject.SetActive(false);	
+		}	
+		gameObject.SetActive(false);
 	}
 	void EndGame (string _text){
 		endGameText.text = _text;
