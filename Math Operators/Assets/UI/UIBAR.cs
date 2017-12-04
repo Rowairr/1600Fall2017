@@ -116,7 +116,7 @@ public PowerUpType powerUp;
 			if (x==100){
 				x = 1;
 			}
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(Time.deltaTime);
 		}	
 		gameObject.SetActive(false);
 	}
