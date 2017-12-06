@@ -11,7 +11,7 @@ public string[] monsterstatement = {"Master", "of", "Monsters!!!"};
 	{
 		foreach (string value in monsterstatement)
 		{
-			activeword.SetActive(true);
+			print (monsterstatement);
 		}
 	}
 }
