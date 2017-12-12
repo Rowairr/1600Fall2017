@@ -20,7 +20,7 @@ public class ReplayGame : MonoBehaviour {
 		startPosition = player.position;
 		enemyStart = enemy.position;
 		fillAmount = uiBar.fillAmount;
-		powerupstart = 
+		powerupstart = Powerups.position;
 		GameOverUI.SetActive(false);
 	}
 	public void Click () {
@@ -30,6 +30,7 @@ public class ReplayGame : MonoBehaviour {
 		CheckPoint.gameOver = false;
 		player.position = startPosition;
 		enemy.position = enemyStart;
+		Powerups.position = powerupstart;
 		uiBar.fillAmount = fillAmount;
 		GameOverUI.SetActive(false);
 	}
