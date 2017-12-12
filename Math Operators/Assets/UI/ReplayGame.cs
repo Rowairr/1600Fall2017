@@ -8,6 +8,7 @@ public class ReplayGame : MonoBehaviour {
 	public Transform player;
 	public Transform enemy;
 	public Transform Powerups;
+	public GameObject powerups;
 	public Image uiBar;
 	public GameObject GameOverUI;
 
@@ -28,6 +29,7 @@ public class ReplayGame : MonoBehaviour {
 		NavMeshAI.gameOver = false;
 		UIBAR.PowerUpsOff = false;
 		CheckPoint.gameOver = false;
+		powerups.SetActive(true);
 		player.position = startPosition;
 		enemy.position = enemyStart;
 		Powerups.position = powerupstart;
